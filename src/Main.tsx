@@ -32,13 +32,13 @@ const messages = [
     id: 3,
     primary: 'Name 3',
     secondary: 'Paid $200 for class',
-    person: '/images/1.jpg',
+    person: '/images/null.jpg',
   },
   {
     id: 4,
     primary: 'Name 4',
     secondary: 'Paid $200 for class',
-    person: '/images/1.jpg',
+    person: '/images/null.jpg',
   },
   {
     id: 5,
@@ -100,7 +100,6 @@ export const Main = () => {
       <React.Fragment>
         <h6>Main</h6>
         <Avatar className={classes.avatar}>H</Avatar>
-
         {/* List */}
         <List className={classes.list}>
           {messages.map(({ id, primary, secondary, person }) => (
