@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+//Bar
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 //Heading
 import Fab from '@material-ui/core/Fab';
 import Avatar from '@material-ui/core/Avatar';
+import Grid from '@material-ui/core/Grid';
 //App bar
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -61,6 +66,9 @@ const messages = [
 ];
 
 const useStyles = makeStyles(theme => ({
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
 
     avatar: {
       margin: 10,
@@ -98,13 +106,34 @@ export const Main = () => {
     const classes = useStyles();
     return (
       <React.Fragment>
-        <h6>Main</h6>
-        <Avatar className={classes.avatar}>H</Avatar>
+        {/* app bar */}
+
+        <AppBar  position="sticky" color="primary"  >
+        <Toolbar variant="dense">
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" color="inherit">
+            FCS
+          </Typography>
+        </Toolbar>
+      </AppBar>
+
+        <Grid container>
+          <Grid >
+            <Avatar className={classes.avatar}>H</Avatar>
+          </Grid>
+          <Grid>
+          <h4>Your Name<br/>$10000</h4>
+          
+          </Grid>
+        </Grid>
+
         {/* List */}
         <List className={classes.list}>
           {messages.map(({ id, primary, secondary, person }) => (
             <React.Fragment key={id}>
-              {id === 1 && <ListSubheader className={classes.subheader}>Today</ListSubheader>}
+              {id === 1 && <ListSubheader  className={classes.subheader}>Today</ListSubheader>}
               {id === 3 && <ListSubheader className={classes.subheader}>Yesterday</ListSubheader>}
               <ListItem button>
                 <ListItemAvatar>
@@ -118,7 +147,7 @@ export const Main = () => {
 
 
         {/* App bar */}
-      <AppBar position="fixed" color="primary" className={classes.appBar}>
+      <AppBar position="sticky" color="primary" className={classes.appBar}>
         <Toolbar>
         <HomeIcon color="inherit" />
           <Link to="add">
