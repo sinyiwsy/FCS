@@ -20,6 +20,11 @@ import MobileScreenShareIcon from '@material-ui/icons/MobileScreenShare';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import AppBar from '@material-ui/core/AppBar';
+import HomeIcon from '@material-ui/icons/Home';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
 const useStyles2 = makeStyles((theme: Theme) =>
   createStyles({
     card: {
@@ -47,6 +52,10 @@ const useStyles2 = makeStyles((theme: Theme) =>
 );
 
 const useStyles = makeStyles(theme => ({
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    
     avatar: {
       margin: 10,
       width: 60,
@@ -71,13 +80,16 @@ export const Four = () => {
 
     return(
         <div>
-            <Box position="static" color="primary" height="70px" style={{ backgroundImage: 'url(https://digitalsynopsis.com/wp-content/uploads/2017/07/beautiful-color-ui-gradients-backgrounds-peach.png)'}}>
-                <Toolbar variant="dense" >
-                    <Box p={2} mx={0} my={-2.3}>
-                    <h4>Config Payment</h4>
-                    </Box>
-                </Toolbar>
-            </Box>
+            <AppBar  position="sticky" style={{ backgroundImage: 'url(https://digitalsynopsis.com/wp-content/uploads/2017/07/beautiful-color-ui-gradients-backgrounds-peach.png)'}} >
+            <Toolbar variant="dense">
+              <IconButton edge="start" className={classes.menuButton} color="secondary" aria-label="menu">
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" color="secondary">
+              Config Payment
+              </Typography>
+            </Toolbar>
+          </AppBar>
 
             <Box position="static" color="primary" height="70px" p={3} mx={2} my={-2}>
             <h4>Payment - Latte Art Workshop</h4>

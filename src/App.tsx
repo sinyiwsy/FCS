@@ -11,8 +11,28 @@ import { Three } from './three';
 import { Four } from './four';
 import { Fri } from './fri';
 
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+// use default theme
+// const theme = createMuiTheme();
+// Or Create your Own theme:
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#CDE0C9',
+      main: '#CDE0C9',
+      dark: '#a5c79e',
+    },
+    secondary: {
+      light: '#E0ECDE',
+      main: '#FFFFFF',
+    },
+  },
+});
+
 export const App = () =>{
     return(
+      <MuiThemeProvider theme={theme}>
       <Router>
         <Switch>
           <Route exact path="/" component={ Login } />
@@ -31,6 +51,7 @@ export const App = () =>{
           <Route exact path="/fri" component={ Fri } />
         </Switch>
       </Router>
+      </MuiThemeProvider>
     );
 }
 
