@@ -53,6 +53,7 @@ const useStyles = makeStyles(theme => ({
   depositContext: {
     flex: 1,
   },
+  
 }));
 
 export const Add = () => {
@@ -62,43 +63,28 @@ export const Add = () => {
   }
   
   return (
+
+    
     
     <div>
     {/* app bar */}
     <Box position="static" color="primary" height="250px" style={{ backgroundImage: 'url(https://digitalsynopsis.com/wp-content/uploads/2017/07/beautiful-color-ui-gradients-backgrounds-peach.png)'}}>
-            <Toolbar variant="dense" >
-            <Box p={2} mx={2} my={3}>
-            <Grid container >
+      <Toolbar variant="dense" >
+        <Box p={2} mx={3} my={3}>
+          <Grid container >
             <Avatar alt="Profile Picture" src="https://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/6/2018/11/gifts-for-men-in-Hong-Kong-MAIN-IMAGE-1024x802.jpg" className={classes.avatar}></Avatar>
             <Grid><h4>Leo Chan</h4></Grid>
               </Grid>
               <React.Fragment>
                 <Typography>Recent Deposits</Typography>
-                  <Typography variant="h6">$3,024.00</Typography>
-                  <Typography color="textSecondary">on 15 March, 2019</Typography>
-              </React.Fragment>
-            </Box>
-           
-            </Toolbar>
-         </Box>
-
-     <Box p={2} mx="auto">
-       <h6></h6>
-      <React.Fragment>
-        <h5>Recent Deposits</h5>
-          <Typography component="p" variant="h4">
-            $3,024.00
-          </Typography>
-          <Typography color="textSecondary" className={classes.depositContext}>
-            on 15 March, 2019
-          </Typography>
-        <div>
-          <Button color="primary">
-            View balance
-          </Button>
-        </div>
-      </React.Fragment>
+                <Typography variant="h6">$3,024.00</Typography>
+                <Typography color="textSecondary">on 15 March, 2019</Typography>
+          </React.Fragment>
+        </Box>
+      </Toolbar>
     </Box>
+
+    
 
     </div>
 

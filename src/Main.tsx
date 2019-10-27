@@ -119,7 +119,7 @@ export const Main = () => {
         {/* app bar */}
         <Box position="static" color="primary" height="250px" style={{ backgroundImage: 'url(https://digitalsynopsis.com/wp-content/uploads/2017/07/beautiful-color-ui-gradients-backgrounds-peach.png)'}}>
             <Toolbar variant="dense" >
-            <Box p={2} mx={2} my={3}>
+            <Box p={2} mx={3} my={3}>
             <Grid container >
             <Avatar alt="Profile Picture" src="https://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/6/2018/11/gifts-for-men-in-Hong-Kong-MAIN-IMAGE-1024x802.jpg" className={classes.avatar}></Avatar>
             <Grid><h4>Leo Chan</h4></Grid>
