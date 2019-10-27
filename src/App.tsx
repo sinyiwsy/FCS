@@ -16,11 +16,16 @@ export const App = () =>{
       <Router>
         <Switch>
           <Route exact path="/" component={ Login } />
+
+          {'SinYi'} 
           <Route exact path="/main" component={ Main } />
           <Route exact path="/add" component={ Add } />
-
           <Route exact path="/one" component={ One } />
+          
+          {'Ready'}
           <Route exact path="/two" component={ Two } />
+
+          {'Kevin'}
           <Route exact path="/three" component={ Three } />
           <Route exact path="/four" component={ Four } />
           <Route exact path="/fri" component={ Fri } />
