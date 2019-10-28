@@ -5,6 +5,8 @@ npm install react --save
 npm install react-dom --save
 npm install react-floating-action-button --save
 npm install reaviz --save
+//npm install react-progress-button --save
+//npm install react-awesome-button --save
 //npm install react-mui-speeddial --save
 //npm install @material-ui/lab --save
 ```
