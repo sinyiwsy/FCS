@@ -28,7 +28,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 const useStyles2 = makeStyles((theme: Theme) =>
   createStyles({
     card: {
-      maxWidth: 376,
+      maxWidth: 500,
       maxHeight: 667,
     },
     media: {
@@ -80,18 +80,18 @@ export const Four = () => {
 
     return(
         <div>
-            <AppBar  position="sticky" style={{ backgroundImage: 'url(https://digitalsynopsis.com/wp-content/uploads/2017/07/beautiful-color-ui-gradients-backgrounds-peach.png)'}} >
+            <AppBar  position="sticky" style={{ backgroundImage: 'url(https://i.pinimg.com/originals/07/ed/e0/07ede021a54ec05e2b425a1bbf3fc070.png)'}} >
             <Toolbar variant="dense">
-              <IconButton edge="start" className={classes.menuButton} color="secondary" aria-label="menu">
+              <IconButton edge="start" className={classes.menuButton} color="default" aria-label="menu">
                 <MenuIcon />
               </IconButton>
-              <Typography variant="h6" color="secondary">
+              <Typography variant="h6" color="textSecondary">
               Config Payment
               </Typography>
             </Toolbar>
           </AppBar>
 
-            <Box position="static" color="primary" height="70px" p={3} mx={2} my={-2}>
+            <Box position="static" color="primary" height="70px" p={6} mx={2} my={-2}>
             <h4>Payment - Latte Art Workshop</h4>
                 <FormControl >
                     <InputLabel htmlFor="input-with-icon-adornment">Base Charges</InputLabel>
@@ -127,21 +127,21 @@ export const Four = () => {
                 </FormControl>
             </Box>
 
-            <Box color="primary" marginTop="270px" height="240px"  style={{ backgroundImage: 'url(https://i.pinimg.com/originals/9c/ce/d3/9cced3264a1e7b144467f506923ebb0b.jpg)'}}>
+            <Box color="primary" marginTop="270px" height="240px" >
             <TextField 
                 label="Discount Code"
-                style={{ marginTop: -10, marginLeft: 39}}
+                style={{ marginTop: 0, marginLeft: 70}}
                 variant="outlined"
                 InputLabelProps={{
                     shrink: true,
                 }}
                 />
-            <Box color="primary" p={0} mx={6} my={-3}>
+            <Box color="primary" p={0} mx={9} my={-3}>
                 <Link to="/four">
                     <h6>+ Further Discount Code</h6>
                 </Link>
             </Box>
-            <Box  p={0} mx={10} my={10}>
+            <Box  p={0} mx={13} my={10}>
             <Button variant="contained">Process Payment</Button>
             </Box>
             </Box>

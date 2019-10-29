@@ -152,7 +152,7 @@ export const Main = () => {
     return (
       <div>
         {/* app bar */}
-        <Box position="sticky" color="primary" height="250px" style={{ backgroundImage: 'url(https://digitalsynopsis.com/wp-content/uploads/2017/07/beautiful-color-ui-gradients-backgrounds-peach.png)'}}>
+        <Box position="sticky" color="primary" height="250px" style={{ backgroundImage: 'url(https://i.pinimg.com/originals/07/ed/e0/07ede021a54ec05e2b425a1bbf3fc070.png)'}}>
             <Toolbar variant="dense" >
             <Box p={2} mx={3} my={3}>
             <Grid container >

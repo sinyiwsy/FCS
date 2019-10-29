@@ -55,14 +55,14 @@ export const One = () => {
     const classes = useStyles();
     return(
         <div>
-        <AppBar  position="sticky" style={{ backgroundImage: 'url(https://digitalsynopsis.com/wp-content/uploads/2017/07/beautiful-color-ui-gradients-backgrounds-peach.png)'}} >
+        <AppBar  position="sticky" style={{ backgroundImage: 'url(https://i.pinimg.com/originals/07/ed/e0/07ede021a54ec05e2b425a1bbf3fc070.png)'}} >
         <Toolbar variant="dense">
         <Link to = "/main" >
-          <IconButton edge="start" className={classes.menuButton} color="secondary" aria-label="menu">
+          <IconButton edge="start" className={classes.menuButton} color="primary" aria-label="menu">
             <MenuIcon />
           </IconButton>
           </Link>
-          <Typography variant="h6" color="secondary">
+          <Typography variant="h6" color="textSecondary">
             FCS
           </Typography>
         </Toolbar>

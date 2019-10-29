@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
       height: '100vh',
     },
     paper: {
-      backgroundImage: 'url(https://digitalsynopsis.com/wp-content/uploads/2017/07/beautiful-color-ui-gradients-backgrounds-peach.png)',
+      backgroundImage: 'url(https://convertingcolors.com/gradient-80CBC4.svg)',
       marginBottom: theme.spacing(0),
     },
     avatar: {
@@ -44,9 +44,13 @@ export const Login = () => {
 
   return (
       <div>
-        <Typography component="h1" variant="h4">
-          Sign in
+        <Box position="static" height="700px" p={10} mx={-8} my={0} style={{ backgroundImage: 'url(https://i.pinimg.com/originals/07/ed/e0/07ede021a54ec05e2b425a1bbf3fc070.png)'}}>
+        <Box position="static"  p={0} mx={0} my={0}>
+        <Typography component="h1" variant="h2" color="textSecondary">
+          Sigh In
         </Typography>
+        </Box>
+        <Box position="static"  p={2} mx={0} my={2}>
           <form className={classes.form} noValidate>
             <TextField
               variant="outlined"
@@ -80,6 +84,8 @@ export const Login = () => {
               </Button>
             </Link>
           </form>
+          </Box>
+        </Box>
     </div>
   );
 }
