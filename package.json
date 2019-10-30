@@ -14,6 +14,7 @@
     "material-ui": "^1.0.0-beta.47",
     "react": "^16.10.2",
     "react-awesome-button": "^6.1.2",
+    "react-d3": "^0.4.0",
     "react-dom": "^16.10.2",
     "react-floating-action-button": "^1.0.5",
     "react-mui-speeddial": "0.0.6",
@@ -22,7 +23,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.2.0",
     "reaviz": "^5.2.1",
-    "typescript": "3.6.4"
+    "typescript": "3.6.4",
+    "victory": "^33.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

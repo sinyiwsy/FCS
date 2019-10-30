@@ -40,6 +40,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import SearchIcon from '@material-ui/icons/Search';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
+import ButtonBase from '@material-ui/core/ButtonBase';
+
+import {VictoryPie, VictoryTheme} from 'victory';
 const actions = [
   { icon: <BIcon />, name: 'Past' , operation: 'b'},
   { icon: <AIcon />, name: 'New' , operation: 'a'},
@@ -95,17 +98,14 @@ const useStyles = makeStyles(theme => ({
       marginBottom: theme.spacing(2),
       marginLeft: theme.spacing(2),
       marginRight: theme.spacing(2),
-      marginTop: theme.spacing(2),
+      // marginTop: theme.spacing(2),
     },
-
+    paperpad: {
+      marginBottom: theme.spacing(2),
+      marginTop: theme.spacing(2),    
+    },
     subheader: {
       backgroundColor: theme.palette.background.paper,
-    },
-    image: {
-      backgroundImage: 'url(https://drive.google.com/drive/folders/1kHccHztwcp5w-LZSlY7tI755tlSCmHrA)',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
     },
 
     card: {
@@ -122,7 +122,10 @@ const useStyles = makeStyles(theme => ({
       width: 151,
     },
 
-
+    image: {
+      width: 128,
+      height: 128,
+    },
     toolbar: {
       minHeight: 160,
       alignItems: 'flex-start',
@@ -132,6 +135,19 @@ const useStyles = makeStyles(theme => ({
     title: {
       flexGrow: 1,
       alignSelf: 'flex-end',
+    },
+
+    paper: {
+      padding: theme.spacing(2),
+      margin: 'auto',
+      maxWidth: 500,
+    },
+
+    img: {
+      margin: 'auto',
+      display: 'block',
+      maxWidth: '100%',
+      maxHeight: '100%',
     },
   }));
 
@@ -184,7 +200,7 @@ export const Main = () => {
           <Typography variant="h6">Hello, Henry.</Typography>
           <Typography >Monthly Deposits:</Typography>
           <Typography variant="h6">$3,024.00</Typography>
-          <Typography color="textSecondary">on 31 Oct, 2019</Typography>
+          {/* <Typography color="textSecondary">on 31 Oct, 2019</Typography> */}
           </Typography>
           </Grid>
           <Grid>
@@ -210,90 +226,162 @@ export const Main = () => {
         <List className={classes.list}>
           {/* 1 */}
           <Link to="one" style={{ textDecoration: 'none' }}>
-            <Card className={classes.card}>
-              <CardMedia
-                className={classes.cover}
-                image="/images/cards/1.jpg"
-              />
-              <div className={classes.details}>
-                <CardContent className={classes.content}>
-                  <Typography component="h5" variant="h5">
-                  Event1
-                  </Typography>
-                  <Typography variant="subtitle1" color="textSecondary">
-                    Date: 5 July<br/>
-                    Venue: CUHK
-                  </Typography>
-                </CardContent>
-              </div>
-            </Card>
+
+          <div className={classes.paperpad}>
+            <Paper className={classes.paper}>
+              <Grid sm container>
+                  <Grid item xs container direction="column" >
+                    <Grid item xs>
+                      <Typography variant="h6">
+                        Coffee Workshop
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary">
+                        Time Value: 3 Days
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid item>
+                    <Button variant="contained" color="primary">
+                      <Typography variant="subtitle1">$250.00</Typography>
+                    </Button>
+                  </Grid>
+              </Grid>
+              <Grid item>
+                      <Grid sm container>
+                      <svg width={100} height={100}>
+                      <text x={50} y={55} textAnchor="middle" >
+                        90%
+                      </text>
+                          <VictoryPie
+                            standalone={false}
+                            width={100} height={100}
+                            radius={40}
+                            innerRadius={25}
+                            labels={() => null}
+                            data={[
+                              { x: "18", y: 90 },
+                              { x: "2", y: 10 }
+                            ]}
+                            colorScale={["#80CBC4", "#EEEEEE" ]}
+                          />
+                        </svg>
+                        <Grid item xs container direction="column" >
+                        <Typography variant="body1">
+                          Coffee Roasting Workshop
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary">
+                          (2 Days left)
+                        </Typography>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+            </Paper>
+          </div>
+
+          <div className={classes.paperpad}>
+            <Paper className={classes.paper}>
+              <Grid sm container>
+                  <Grid item xs container direction="column" >
+                    <Grid item xs>
+                      <Typography variant="h6">
+                        Coffee Workshop 2
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary">
+                        Time Value: 3 Days
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid item>
+                    <Button variant="contained" color="primary">
+                      <Typography variant="subtitle1">$100.00</Typography>
+                    </Button>
+                  </Grid>
+              </Grid>
+              <Grid item>
+                      <Grid sm container>
+                      <svg width={100} height={100}>
+                      <text x={50} y={55} textAnchor="middle" >
+                        60%
+                      </text>
+                          <VictoryPie
+                            standalone={false}
+                            width={100} height={100}
+                            radius={40}
+                            innerRadius={25}
+                            labels={() => null}
+                            data={[
+                              { x: "18", y: 60 },
+                              { x: "2", y: 40 }
+                            ]}
+                            colorScale={["#80CBC4", "#EEEEEE" ]}
+                          />
+                        </svg>
+                        <Grid item xs container direction="column" >
+                        <Typography variant="body1">
+                          Coffee Roasting Workshop
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary">
+                          (2 Days left)
+                        </Typography>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+            </Paper>
+          </div>
+
+          <div className={classes.paperpad}>
+            <Paper className={classes.paper}>
+              <Grid sm container>
+                  <Grid item xs container direction="column" >
+                    <Grid item xs>
+                      <Typography variant="h6">
+                        Coffee Workshop 3
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary">
+                        Time Value: 3 Days
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid item>
+                    <Button variant="contained" color="primary">
+                      <Typography variant="subtitle1">$600.00</Typography>
+                    </Button>
+                  </Grid>
+              </Grid>
+              <Grid item>
+                      <Grid sm container>
+                      <svg width={100} height={100}>
+                      <text x={50} y={55} textAnchor="middle" >
+                        15%
+                      </text>
+                          <VictoryPie
+                            standalone={false}
+                            width={100} height={100}
+                            radius={40}
+                            innerRadius={25}
+                            labels={() => null}
+                            data={[
+                              { x: "18", y: 15 },
+                              { x: "2", y: 85 }
+                            ]}
+                            colorScale={["#80CBC4", "#EEEEEE" ]}
+                          />
+                        </svg>
+                        <Grid item xs container direction="column" >
+                        <Typography variant="body1">
+                          Coffee Roasting Workshop
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary">
+                          (2 Days left)
+                        </Typography>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+            </Paper>
+          </div>
+
           </Link>
-
-          <br/>
-          {/* 2 */}
-          <Link to="one" style={{ textDecoration: 'none' }}>
-            <Card className={classes.card}>
-              <CardMedia
-                className={classes.cover}
-                image="/images/cards/2.jpg"
-              />
-              <div className={classes.details}>
-                <CardContent className={classes.content}>
-                  <Typography component="h5" variant="h5">
-                  Event2
-                  </Typography>
-                  <Typography variant="subtitle1" color="textSecondary">
-                    Date: 5 July<br/>
-                    Venue: CUHK
-                  </Typography>
-                </CardContent>
-              </div>
-            </Card>
-          </Link> 
-
-          <br/>
-          {/* 3 */}
-          <Link to="one" style={{ textDecoration: 'none' }}>
-            <Card className={classes.card}>
-              <CardMedia
-                className={classes.cover}
-                image="/images/cards/3.jpg"
-              />
-              <div className={classes.details}>
-                <CardContent className={classes.content}>
-                  <Typography component="h5" variant="h5">
-                    Event3
-                  </Typography>
-                  <Typography variant="subtitle1" color="textSecondary">
-                    Date: 5 July<br/>
-                    Venue: CUHK
-                  </Typography>
-                </CardContent>
-              </div>
-            </Card>
-          </Link> 
-          <br/>
-          {/* 4 */}
-          <Link to="one" style={{ textDecoration: 'none' }}>
-            <Card className={classes.card}>
-              <CardMedia
-                className={classes.cover}
-                image="/images/cards/4.jpg"
-              />
-              <div className={classes.details}>
-                <CardContent className={classes.content}>
-                  <Typography component="h5" variant="h5">
-                  Event4
-                  </Typography>
-                  <Typography variant="subtitle1" color="textSecondary">
-                    Date: 5 July<br/>
-                    Venue: CUHK
-                  </Typography>
-                </CardContent>
-              </div>
-            </Card>
-          </Link>  
-
+          
         </List>
 
 
