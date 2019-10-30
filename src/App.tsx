@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import './index.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter, BrowserRouter, Route, Switch } from "react-router-dom";
 import { Main } from './Main';
 import { Add } from './Add';
 import { Login } from './Login';
@@ -33,8 +33,11 @@ const theme = createMuiTheme({
 
 export const App = () =>{
     return(
-      <MuiThemeProvider theme={theme}>
-      <Router>
+    
+      
+        
+        <BrowserRouter  basename={window.location.pathname || ''}>
+          <MuiThemeProvider theme={theme}>
         <Switch>
           <Route exact path="/" component={ Login } />
 
@@ -51,8 +54,10 @@ export const App = () =>{
           <Route exact path="/four" component={ Four } />
           <Route exact path="/fri" component={ Fri } />
         </Switch>
-      </Router>
-      </MuiThemeProvider>
+        </MuiThemeProvider>
+      </BrowserRouter>
+      
+
     );
 }
 
