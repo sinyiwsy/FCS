@@ -17,10 +17,6 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
-var CanvasJSReact = require('./canvasjs.react');
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
-
 const useStyles = makeStyles(theme => ({
     menuButton: {
       marginRight: theme.spacing(2),
@@ -102,12 +98,7 @@ export const One = () => {
 
               <CardMedia
                 className={classes.cover}>
-              <reaviz.PieChart width={150} height={150} data={[
-                    { key: "Paid", data: 14 },
-                    { key: "Not", data: 5 },
-                ]}
 
-                 />
             </CardMedia>
             </Card>
           </Link> 
@@ -129,12 +120,7 @@ export const One = () => {
               </div>
               <CardMedia
                 className={classes.cover}>
-              <reaviz.PieChart width={150} height={150} data={[
-                    { key: "Paid", data: 45 },
-                    { key: "Not", data: 5 },
-                ]}
-
-                 />
+              
             </CardMedia>
 
             </Card>
@@ -156,12 +142,7 @@ export const One = () => {
               </div>
               <CardMedia
                 className={classes.cover}>
-              <reaviz.PieChart width={150} height={150} data={[
-                    { key: "Paid", data: 14 },
-                    { key: "Not", data: 30 },
-                ]}
-
-                 />
+              
             </CardMedia>
             </Card>
           </Link>  
