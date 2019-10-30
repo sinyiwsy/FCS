@@ -16,7 +16,11 @@ import AddIcon from '@material-ui/icons/Add';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import * as reaviz from "reaviz";
+
+var CanvasJSReact = require('./canvasjs.react');
+var CanvasJS = CanvasJSReact.CanvasJS;
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
 const useStyles = makeStyles(theme => ({
     menuButton: {
       marginRight: theme.spacing(2),
@@ -53,12 +57,13 @@ const useStyles = makeStyles(theme => ({
 
 export const One = () => {
     const classes = useStyles();
+
     return(
         <div>
         <AppBar  position="sticky"style={{boxShadow: "none"}} >
         <Toolbar variant="dense">
-        <Link to = "/main"  >
-          <IconButton edge="start" className={classes.menuButton} aria-label="menu">
+        <Link to = "/main"  style={{ color: '#FFF' }}>
+          <IconButton edge="start"  color="inherit" className={classes.menuButton} aria-label="menu">
             <MenuIcon />
           </IconButton>
           </Link>
@@ -75,44 +80,10 @@ export const One = () => {
           <Link to="one" style={{ textDecoration: 'none' }}>
             <Card className={classes.card}>
             <CardContent className={classes.content}>
-            <Typography align="center" variant="h6">
-                  Summary
-                  </Typography>
-                  <br/>
-            <reaviz.BarChart
-                data={[
-                    { key: "1", data: 14 },
-                    { key: "2", data: 5 },
-                    { key: "3", data: 18 },
-                    { key: "4", data: 13 },
-                    { key: "5", data: 12 },
-                    { key: "6", data: 1 },
-                    { key: "7", data: 5 },
-                    { key: "8", data: 9 }
-                ]}
-                width={300}
-                height={150}
-                gridlines={<reaviz.GridlineSeries />}
-                series={
-                    <reaviz.BarSeries
-                    bar={
-                        <reaviz.Bar
-                        width={12}
-                        animated={false}
-                        //gradient={false}
-                        groupIndex={1}
-                        padding={30}
-                        rounded={true}
-                        //tooltip={<reaviz.Tooltip content={"hello world"} />}
-                        />
-                    }
-                    />
-                }
-                />
+            
             </CardContent>
             </Card>
           </Link>
-
           <br/>
           {/* 2 */}
           <Link to="add" style={{ textDecoration: 'none' }}>

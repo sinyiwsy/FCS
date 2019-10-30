@@ -29,6 +29,7 @@ import Avatar from '@material-ui/core/Avatar';
 import ImageIcon from '@material-ui/icons/Image';
 
 import SnackbarContent from '@material-ui/core/SnackbarContent';
+import {VictoryPie, VictoryTheme} from 'victory';
 
 const useStyles = makeStyles(theme => ({
   snackbar: {

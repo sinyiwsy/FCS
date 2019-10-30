@@ -20,9 +20,11 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import IconButton from '@material-ui/core/IconButton';
+import AppBar from '@material-ui/core/AppBar';
+import SearchIcon from '@material-ui/icons/Search';
+import MenuIcon from  '@material-ui/icons/ArrowBackIos';
 
-const useStyles2 = makeStyles((theme: Theme) =>
-  createStyles({
+const useStyles = makeStyles(theme => ({
     card: {
       maxWidth: 500,
       maxHeight: 800,
@@ -41,85 +43,70 @@ const useStyles2 = makeStyles((theme: Theme) =>
     expandOpen: {
       transform: 'rotate(180deg)',
     },
-    avatar: {
-      backgroundColor: red[500],
+    bigAvatar: {
+      margin: 10,
+      width: 80,
+      height: 80,
+    },
+
+    toolbar: {
+      minHeight: 160,
+      alignItems: 'flex-start',
+      paddingTop: theme.spacing(1),
+      paddingBottom: theme.spacing(2),
+    },
+    
+    title: {
+      flexGrow: 1,
+      alignSelf: 'flex-end',
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
     },
   }),
 );
 
-const useStyles = makeStyles(theme => ({
-    avatar: {
-      margin: 10,
-      width: 60,
-      height: 60,
-    },
-    list: {
-      marginBottom: theme.spacing(2),
-    },
-    subheader: {
-      backgroundColor: theme.palette.background.paper,
-    },
-    image: {
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    },
-  }));
 
 export const Three = () => {
-    const classes2 = useStyles2();
     const classes = useStyles();
     
     return(
         <div>
-            <Box position="static" color="primary" height="250px" style={{ backgroundImage: 'url(https://i.pinimg.com/originals/07/ed/e0/07ede021a54ec05e2b425a1bbf3fc070.png)'}}>
-                <Toolbar variant="dense" >
-                    <Box p={2} mx={3} my={3}>
-                        <React.Fragment>
-                            <Avatar alt="Profile Picture" src="https://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/6/2018/11/gifts-for-men-in-Hong-Kong-MAIN-IMAGE-1024x802.jpg" className={classes.avatar}></Avatar>
-                            <Typography>Recent Deposits</Typography>
-                            <Typography variant="h6">$3,024.00</Typography>
-                            <Typography color="textSecondary">on 15 March, 2019</Typography>
-                        </React.Fragment>
-                    </Box>
-                </Toolbar>
+        <AppBar position="sticky" style={{boxShadow: "none"}}>
+        <Toolbar className={classes.toolbar}  >
+          <Link to= "/main" style={{ color: '#FFF' }}>
+        <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+          >
+            <MenuIcon />
+          </IconButton>
+          </Link>
+        <Grid container className={classes.title} >
+          <Grid className={classes.title}>
+          <Typography variant="h5" noWrap>
+          <Typography variant="h6">Hello, Henry.</Typography>
+          <Typography >Monthly Deposits:</Typography>
+          <Typography variant="h6">$3,024.00</Typography>
+          {/* <Typography color="textSecondary">on 31 Oct, 2019</Typography> */}
+          </Typography>
+          </Grid>
+          <Grid>
+          <Avatar  alt="logo" src="/images/1.jpg" className={classes.bigAvatar} />
+          <Typography align="center">
+            <Box fontWeight="fontWeightBold">
+            RECEIVABLE
             </Box>
-
-            <Card className={classes2.card} >
-                <CardHeader avatar={
-                    <Avatar aria-label="recipe" className={classes2.avatar}>
-                    R
-                    </Avatar>
-                    }
-                    action={
-                        <IconButton aria-label="settings">
-                        <MoreVertIcon />
-                        </IconButton>
-                    }
-                    title="Latte Art Workshop"
-                    subheader="September 14, 2019"
-                    />
-            <Link to="/four">
-            <CardMedia
-                className={classes2.media}
-                image="https://academiedecafedemontreal.com/wp-content/uploads/2016/12/acm_siteweb_latteart01-1000x667.jpg"
-                title="Paella dish"
-            />
-            </Link>
-            <CardContent>
-                <Typography variant="body2" color="textSecondary" component="h6">
-                Any individual bookings exceeding the max. capacity are to be quoted separately as a Private Event.
-                </Typography>
-            </CardContent>
-                <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                    </IconButton>
-                    <IconButton aria-label="share">
-                        <ShareIcon />
-                    </IconButton>
-                </CardActions>
-            </Card>
+          </Typography>
+          </Grid>
+        </Grid>
+        <IconButton edge="end" color="inherit">
+            <SearchIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
         </div>
 
 
