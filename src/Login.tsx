@@ -8,16 +8,18 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 import FormGroup from '@material-ui/core/FormGroup';
-
-
+import Paper from '@material-ui/core/Paper';
+import Helmet from 'react-helmet';
 
 const useStyles = makeStyles(theme => ({
     root: {
       height: '100vh',
     },
     paper: {
-      backgroundImage: 'url(https://convertingcolors.com/gradient-80CBC4.svg)',
-      marginBottom: theme.spacing(0),
+      marginBottom: theme.spacing(2),
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(2),
+      marginTop: theme.spacing(5),
     },
     avatar: {
       marginTop: theme.spacing(0),
@@ -43,9 +45,11 @@ export const Login = () => {
     const classes = useStyles();
 
   return (
-      <div>
-        <Box position="static" height="700px" p={10} mx={-8} my={0} style={{ backgroundImage: 'url(https://i.pinimg.com/originals/07/ed/e0/07ede021a54ec05e2b425a1bbf3fc070.png)'}}>
-        <Box position="static"  p={0} mx={0} my={0}>
+      <div >
+      <Helmet bodyAttributes={{style: 'background-color : #80CBC4'}}/>
+
+        <Paper className={classes.paper}>
+        <Box position="static"  p={2} mx={0} my={0}>
         <Typography component="h1" variant="h2" color="textSecondary">
           Sigh In
         </Typography>
@@ -74,7 +78,7 @@ export const Login = () => {
               id="password"
               autoComplete="current-password"
             />
-            <Link to='/main'>
+            <Link to='/main' style={{ textDecoration: 'none' }}>
               <Button type="submit"
                 fullWidth
                 variant="contained"
@@ -85,7 +89,7 @@ export const Login = () => {
             </Link>
           </form>
           </Box>
-        </Box>
+          </Paper>
     </div>
   );
 }
