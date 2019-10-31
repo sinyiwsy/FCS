@@ -51,7 +51,7 @@ export const Login = () => {
         <Paper className={classes.paper}>
         <Box position="static"  p={2} mx={0} my={0}>
         <Typography component="h1" variant="h2" color="textSecondary">
-          Sigh In
+          Sign In
         </Typography>
         </Box>
         <Box position="static"  p={2} mx={0} my={2}>
